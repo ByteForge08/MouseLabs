@@ -1,0 +1,552 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #cccccc;
+}
+
+.test-area {
+    display: grid;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.test-section {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.test-section h2 {
+    margin-bottom: 15px;
+    color: #ffd93d;
+    font-size: 1.8rem;
+}
+
+.test-section .instructions {
+    margin-bottom: 20px;
+    color: #cccccc;
+    font-style: italic;
+}
+
+.click-test-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.click-test-header h2 {
+    margin-bottom: 0;
+}
+
+.timer-config {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.timer-config label {
+    font-weight: 600;
+    color: #ffd93d;
+    white-space: nowrap;
+}
+
+.timer-config input {
+    padding: 10px 15px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    width: 70px;
+    transition: all 0.3s ease;
+}
+
+.timer-config input:focus {
+    outline: none;
+    border-color: #ffd93d;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-primary {
+    padding: 12px 24px;
+    background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.mouse-illustration-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.mouse-illustration {
+    position: relative;
+    width: 300px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mouse-body {
+    position: relative;
+    width: 200px;
+    height: 350px;
+    background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+    border-radius: 100px 100px 60px 60px;
+    border: 3px solid #444;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.mouse-button {
+    position: absolute;
+    background: linear-gradient(135deg, #3a3a3a, #2a2a2a);
+    border: 2px solid #555;
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+.mouse-button.active {
+    background: linear-gradient(135deg, #ff6b6b, #ff4757);
+    border-color: #ff6b6b;
+    transform: translateY(2px);
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+}
+
+.left-button {
+    top: 50px;
+    left: 10px;
+    width: 80px;
+    height: 120px;
+    border-radius: 40px 0 0 40px;
+}
+
+.right-button {
+    top: 50px;
+    right: 10px;
+    width: 80px;
+    height: 120px;
+    border-radius: 0 40px 40px 0;
+}
+
+.scroll-wheel {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 60px;
+    background: linear-gradient(135deg, #4a4a4a, #3a3a3a);
+    border: 2px solid #666;
+    border-radius: 20px;
+    transition: all 0.1s ease;
+}
+
+.scroll-wheel.active {
+    background: linear-gradient(135deg, #ffd93d, #ffa502);
+    border-color: #ffd93d;
+    transform: translateX(-50%) translateY(2px);
+    box-shadow: 0 0 20px rgba(255, 217, 61, 0.5);
+}
+
+.side-button {
+    position: absolute;
+    background: linear-gradient(135deg, #3a3a3a, #2a2a2a);
+    border: 2px solid #555;
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+.side-button.active {
+    background: linear-gradient(135deg, #00d2d3, #00a8ff);
+    border-color: #00d2d3;
+    transform: translateX(2px);
+    box-shadow: 0 0 20px rgba(0, 210, 211, 0.5);
+}
+
+.back-button {
+    top: 120px;
+    left: -25px;
+    width: 50px;
+    height: 30px;
+    border-radius: 10px 0 0 10px;
+}
+
+.forward-button {
+    top: 160px;
+    left: -25px;
+    width: 50px;
+    height: 30px;
+    border-radius: 10px 0 0 10px;
+}
+
+.button-label {
+    position: absolute;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #cccccc;
+    text-align: center;
+    width: 100%;
+    bottom: -25px;
+    left: 0;
+}
+
+.mouse-button .button-label {
+    bottom: -20px;
+}
+
+.mouse-legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid;
+}
+
+.left-color {
+    background: #ff6b6b;
+    border-color: #ff4757;
+}
+
+.right-color {
+    background: #ff6b6b;
+    border-color: #ff4757;
+}
+
+.middle-color {
+    background: #ffd93d;
+    border-color: #ffa502;
+}
+
+.back-color {
+    background: #00d2d3;
+    border-color: #00a8ff;
+}
+
+.forward-color {
+    background: #00d2d3;
+    border-color: #00a8ff;
+}
+
+/* Area de teste de cliques - ESTILOS ATUALIZADOS */
+.click-test-area {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 50px 30px;
+    border-radius: 20px;
+    text-align: center;
+    border: 3px dashed rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    
+    /* Prevenir seleção de texto e barra azul */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    outline: none;
+}
+
+.click-test-area.active {
+    border-color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.1);
+}
+
+.click-test-area::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.click-test-area.active::before {
+    left: 100%;
+}
+
+.click-counter {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ff6b6b;
+    
+    /* Prevenir seleção */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.click-counter small {
+    display: block;
+    font-size: 1rem;
+    color: #cccccc;
+    margin-top: 10px;
+    
+    /* Prevenir seleção */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.timer-display {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffd93d;
+    margin-bottom: 20px;
+    
+    /* Prevenir seleção */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.instructions {
+    color: #cccccc;
+    font-size: 1.1rem;
+    
+    /* Prevenir seleção */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.sensor-test-area {
+    background: rgba(255, 255, 255, 0.08);
+    height: 300px;
+    border-radius: 20px;
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    cursor: crosshair;
+}
+
+.cursor-tracker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #ff6b6b, transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: all 0.1s ease;
+}
+
+.sensor-stats {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.sensor-stats div {
+    margin-bottom: 5px;
+}
+
+.results {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.results h2 {
+    color: #ffd93d;
+    margin-bottom: 20px;
+}
+
+#resultsContent {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.result-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.result-item h3 {
+    color: #ffd93d;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.result-value {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.result-subtext {
+    font-size: 0.9rem;
+    color: #cccccc;
+}
+
+.success-message {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(0, 255, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #00ff00;
+}
+
+.warning-message {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 107, 107, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #ff6b6b;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .click-test-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .click-test-header h2 {
+        text-align: center;
+    }
+    
+    .timer-config {
+        justify-content: center;
+    }
+    
+    .mouse-illustration {
+        width: 250px;
+        height: 400px;
+    }
+    
+    .mouse-body {
+        width: 160px;
+        height: 280px;
+    }
+    
+    .left-button, .right-button {
+        width: 65px;
+        height: 100px;
+    }
+    
+    .side-button {
+        left: -20px;
+        width: 40px;
+    }
+    
+    .mouse-legend {
+        grid-template-columns: 1fr;
+    }
+    
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+}
