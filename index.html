@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MouseLabs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1>MouseLabs</h1>
+                <a href="https://byteforge08.github.io/KeyLabs/" class="btn-keylabs" target="_blank">
+                    Testar Teclado
+                </a>
+            </div>
+            <p>Teste completo do seu mouse em um só lugar</p>
+        </header>
+
+        <div class="test-area">
+            <!-- Teste de Botoes com Ilustracao -->
+            <div class="test-section">
+                <h2>Teste de Botões do Mouse</h2>
+                <p class="instructions">Pressione os botões do seu mouse em qualquer área do site para testá-los</p>
+                
+                <div class="mouse-illustration-container">
+                    <!-- Ilustracao do Mouse -->
+                    <div class="mouse-illustration">
+                        <!-- Corpo do mouse -->
+                        <div class="mouse-body">
+                            <!-- Botao esquerdo -->
+                            <div class="mouse-button left-button" id="illus-left-btn">
+                                <div class="button-label"></div>
+                            </div>
+                            
+                            <!-- Botao direito -->
+                            <div class="mouse-button right-button" id="illus-right-btn">
+                                <div class="button-label"></div>
+                            </div>
+                            
+                            <!-- Scroll wheel -->
+                            <div class="scroll-wheel" id="illus-middle-btn">
+                                <div class="button-label"></div>
+                            </div>
+                            
+                            <!-- Botao lateral esquerdo (tras) -->
+                            <div class="side-button back-button" id="illus-back-btn">
+                                <div class="button-label">Trás</div>
+                            </div>
+                            
+                            <!-- Botao lateral direito (frente) -->
+                            <div class="side-button forward-button" id="illus-forward-btn">
+                                <div class="button-label"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Legenda dos botoes -->
+                    <div class="mouse-legend">
+                        <div class="legend-item">
+                            <div class="legend-color left-color"></div>
+                            <span>Botão Esquerdo</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color right-color"></div>
+                            <span>Botão Direito</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color middle-color"></div>
+                            <span>Scroll (Clique)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color back-color"></div>
+                            <span>Botão Lateral Trás</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color forward-color"></div>
+                            <span>Botão Lateral Frente</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Teste de Cliques -->
+            <div class="test-section">
+                <div class="click-test-header">
+                    <h2>Teste de Velocidade de Cliques</h2>
+                    <div class="timer-config">
+                        <label for="timer">Tempo (1-100s):</label>
+                        <input type="number" id="timer" min="1" max="100" value="10">
+                        <button id="startClickTest" class="btn-primary">Iniciar Teste</button>
+                    </div>
+                </div>
+                
+                <div class="click-test-area" id="clickTestArea">
+                    <div class="click-counter">
+                        <span id="clickCount">0</span>
+                        <small>cliques</small>
+                    </div>
+                    <div class="timer-display" id="timerDisplay">10s</div>
+                    <div class="instructions">Clique o mais rápido que puder!</div>
+                </div>
+            </div>
+
+            <!-- Teste de Sensor -->
+            <div class="test-section">
+                <h2>Teste de Sensor do Mouse</h2>
+                <div class="sensor-test-area" id="sensorTestArea">
+                    <div class="cursor-tracker"></div>
+                    <div class="sensor-stats">
+                        <div>Velocidade: <span id="speed">0</span> px/s</div>
+                        <div>Trajeto: <span id="distance">0</span> px</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="results">
+            <h2>Resultados</h2>
+            <div id="resultsContent">
+                <p>Complete os testes para ver os resultados</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">MouseLabs</div>
+            <div class="footer-text">Teste completo do seu mouse em um só lugar</div>
+            <div class="footer-divider"></div>
+            <div class="footer-credits">
+                Desenvolvido por ByteForge08 • 2025
+            </div>
+            <div class="footer-credits">
+                Ferramenta de diagnóstico para periféricos
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
