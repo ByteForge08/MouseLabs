@@ -5,6 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MouseLabs</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .footer {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 3px solid #3498db;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-brand {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 5px;
+        }
+        
+        .footer-text {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin: 5px 0;
+        }
+        
+        .footer-divider {
+            width: 50px;
+            height: 2px;
+            background: #3498db;
+            margin: 10px 0;
+        }
+        
+        .footer-credits {
+            font-size: 0.8em;
+            opacity: 0.7;
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .footer {
+                padding: 15px;
+            }
+            
+            .footer-brand {
+                font-size: 1.3em;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -118,6 +173,21 @@
             </div>
         </div>
     </div>
+
+    <!-- Rodapé com créditos -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">MouseLabs</div>
+            <div class="footer-text">Teste completo do seu mouse em um só lugar</div>
+            <div class="footer-divider"></div>
+            <div class="footer-credits">
+                Desenvolvido por ByteForge08 • 2025
+            </div>
+            <div class="footer-credits">
+                Ferramenta de diagnóstico para periféricos
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
