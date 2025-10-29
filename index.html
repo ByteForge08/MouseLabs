@@ -5,74 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MouseLabs</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .footer {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            border-top: 3px solid #3498db;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .footer-brand {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #3498db;
-            margin-bottom: 5px;
-        }
-        
-        .footer-text {
-            font-size: 0.9em;
-            opacity: 0.9;
-            margin: 5px 0;
-        }
-        
-        .footer-divider {
-            width: 50px;
-            height: 2px;
-            background: #3498db;
-            margin: 10px 0;
-        }
-        
-        .footer-credits {
-            font-size: 0.8em;
-            opacity: 0.7;
-            margin-top: 5px;
-        }
-        
-        @media (max-width: 768px) {
-            .footer {
-                padding: 15px;
-            }
-            
-            .footer-brand {
-                font-size: 1.3em;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>MouseLabs</h1>
-            <p>Teste completo do seu mouse em um so lugar</p>
+            <div class="header-top">
+                <h1>MouseLabs</h1>
+                <a href="https://byteforge08.github.io/KeyLabs/" class="btn-keylabs" target="_blank">
+                    ⌨️ Testar Teclado
+                </a>
+            </div>
+            <p>Teste completo do seu mouse em um só lugar</p>
         </header>
 
         <div class="test-area">
             <!-- Teste de Botoes com Ilustracao -->
             <div class="test-section">
-                <h2>Teste de Botoes do Mouse</h2>
-                <p class="instructions">Pressione os botoes do seu mouse em qualquer area do site para testa-los</p>
+                <h2>Teste de Botões do Mouse</h2>
+                <p class="instructions">Pressione os botões do seu mouse em qualquer área do site para testá-los</p>
                 
                 <div class="mouse-illustration-container">
                     <!-- Ilustracao do Mouse -->
@@ -96,7 +46,7 @@
                             
                             <!-- Botao lateral esquerdo (tras) -->
                             <div class="side-button back-button" id="illus-back-btn">
-                                <div class="button-label">Tras</div>
+                                <div class="button-label">Trás</div>
                             </div>
                             
                             <!-- Botao lateral direito (frente) -->
@@ -110,11 +60,11 @@
                     <div class="mouse-legend">
                         <div class="legend-item">
                             <div class="legend-color left-color"></div>
-                            <span>Botao Esquerdo</span>
+                            <span>Botão Esquerdo</span>
                         </div>
                         <div class="legend-item">
                             <div class="legend-color right-color"></div>
-                            <span>Botao Direito</span>
+                            <span>Botão Direito</span>
                         </div>
                         <div class="legend-item">
                             <div class="legend-color middle-color"></div>
@@ -122,11 +72,11 @@
                         </div>
                         <div class="legend-item">
                             <div class="legend-color back-color"></div>
-                            <span>Botao Lateral Tras</span>
+                            <span>Botão Lateral Trás</span>
                         </div>
                         <div class="legend-item">
                             <div class="legend-color forward-color"></div>
-                            <span>Botao Lateral Frente</span>
+                            <span>Botão Lateral Frente</span>
                         </div>
                     </div>
                 </div>
@@ -149,7 +99,7 @@
                         <small>cliques</small>
                     </div>
                     <div class="timer-display" id="timerDisplay">10s</div>
-                    <div class="instructions">Clique o mais rapido que puder!</div>
+                    <div class="instructions">Clique o mais rápido que puder!</div>
                 </div>
             </div>
 
@@ -174,7 +124,7 @@
         </div>
     </div>
 
-    <!--creditos -->
+    <!-- Rodapé -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-brand">MouseLabs</div>
@@ -192,4 +142,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
